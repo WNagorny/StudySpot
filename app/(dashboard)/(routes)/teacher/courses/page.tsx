@@ -3,7 +3,7 @@ const CoursesPage = async () => {
   
   return ( 
     <div className="p-6">
-     hello
+     courses page
     </div>
    );
 }
