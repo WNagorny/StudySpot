@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 
 import Link from "next/link";
-// import toast from "react-hot-toast";
+import toast from "react-hot-toast";
 
 
 import {
@@ -31,6 +31,8 @@ import {
 
 const CreatePage = () => {
 
+   const router = useRouter();
+
    const form = useForm<z.infer<typeof formSchema>>({
       resolver: zodResolver(formSchema),
       defaultValues: {
@@ -41,7 +43,13 @@ const CreatePage = () => {
     const { isSubmitting, isValid } = form.formState;
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-      console.log(values);
+      try {
+        const response = await axios.post("/api/courses", values);
+        router.push(`/teacher/courses/${response.data.id}`);
+        toast.success("Course created");
+      } catch {
+        toast.error("Something went wrong");
+      }
     }
 
    return ( <div className="max-w-5xl mx-auto flex md:items-center md:justify-center h-full p-6">
