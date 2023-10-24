@@ -6,9 +6,11 @@ import { ArrowLeft, Eye, LayoutDashboard, Video } from "lucide-react";
 import { db } from "@/lib/db";
 import { IconBadge } from "@/components/icon-badge";
 import { ChapterTitleForm } from "./chapter-title-form";
+import { ChapterDescriptionForm } from "./chapter-description-form";
 // import { Banner } from "@/components/banner";
 
-// import { ChapterDescriptionForm } from "./_components/chapter-description-form";
+// import { ChapterTitleForm } from "./_components/chapter-title-form";
+
 // import { ChapterAccessForm } from "./_components/chapter-access-form";
 // import { ChapterVideoForm } from "./_components/chapter-video-form";
 // import { ChapterActions } from "./_components/chapter-actions";
@@ -101,11 +103,11 @@ const ChapterIdPage = async ({
                 courseId={params.courseId}
                 chapterId={params.chapterId}
               />
-              {/* <ChapterDescriptionForm
+              <ChapterDescriptionForm
                 initialData={chapter}
                 courseId={params.courseId}
                 chapterId={params.chapterId}
-              /> */}
+              />
             </div>
             <div>
               <div className="flex items-center gap-x-2">
