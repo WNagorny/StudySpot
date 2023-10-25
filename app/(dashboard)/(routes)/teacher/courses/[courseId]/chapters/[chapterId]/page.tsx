@@ -7,6 +7,7 @@ import { db } from "@/lib/db";
 import { IconBadge } from "@/components/icon-badge";
 import { ChapterTitleForm } from "./chapter-title-form";
 import { ChapterDescriptionForm } from "./chapter-description-form";
+import { ChapterAccessForm } from "./chapter-access-form";
 // import { Banner } from "@/components/banner";
 
 // import { ChapterTitleForm } from "./_components/chapter-title-form";
@@ -116,11 +117,11 @@ const ChapterIdPage = async ({
                   Access Settings
                 </h2>
               </div>
-              {/* <ChapterAccessForm
+              <ChapterAccessForm
                 initialData={chapter}
                 courseId={params.courseId}
                 chapterId={params.chapterId}
-              /> */}
+              />
             </div>
           </div>
           <div>
