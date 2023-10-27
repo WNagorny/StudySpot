@@ -7,6 +7,7 @@ import { db } from "@/lib/db";
 // import { CoursesList } from "@/components/courses-list";
 
 import { Categories } from "./_components/categories";
+import { SearchInput } from "@/components/search-input";
 
 interface SearchPageProps {
   searchParams: {
@@ -38,7 +39,7 @@ const SearchPage = async ({
   return (
     <>
       <div className="px-6 pt-6 md:hidden md:mb-0 block">
-        {/* <SearchInput /> */}
+        <SearchInput />
       </div>
       <div className="p-6 space-y-4">
         <Categories
