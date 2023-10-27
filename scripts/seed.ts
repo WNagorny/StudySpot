@@ -5,6 +5,15 @@ const database = new PrismaClient();
 async function main() {
   try {
     await database.category.createMany({
+      // data: [
+      //   { name: "HTML" },
+      //   { name: "CSS" },
+      //   { name: "Tailwind" },
+      //   { name: "MongoDB" },
+      //   { name: "JavaScript" },
+      //   { name: "REACT" },
+      //   { name: "TypeScript" },
+      // ]
       data: [
         { name: "Computer Science" },
         { name: "Music" },
