@@ -1,10 +1,32 @@
+import { db } from "@/lib/db";
+import { redirect } from "next/navigation";
 
-import React from 'react'
+const CourseIdPage = async ({
+  params
+}: {
+  params: { courseId: string; }
+}) => {
+  const course = await db.course.findUnique({
+    where: {
+      id: params.courseId,
+    },
+    include: {
+      chapters: {
+        where: {
+          isPublished: true,
+        },
+        orderBy: {
+          position: "asc"
+        }
+      }
+    }
+  });
 
-const CourseIdPage = () => {
-  return (
-    <div>Watch the course</div>
-  )
+  if (!course) {
+    return redirect("/");
+  }
+
+  return redirect(`/courses/${course.id}/chapters/${course.chapters[0].id}`);
 }
-
-export default CourseIdPage
+ 
+export default CourseIdPage;
