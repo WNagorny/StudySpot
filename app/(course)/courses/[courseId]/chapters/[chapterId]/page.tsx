@@ -1,3 +1,5 @@
+
+
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { File } from "lucide-react";
@@ -6,13 +8,11 @@ import { getChapter } from "@/actions/get-chapter";
 import { Banner } from "@/components/banner";
 import { VideoPlayer } from "./_components/video-player";
 import { CourseProgressButton } from "./_components/course-progress-button";
-// import { Banner } from "@/components/banner";
-// import { Separator } from "@/components/ui/separator";
-// import { Preview } from "@/components/preview";
+import { CourseEnrollButton } from "./_components/course-enroll-button";
 
-// import { VideoPlayer } from "./_components/video-player";
-// import { CourseEnrollButton } from "./_components/course-enroll-button";
-// import { CourseProgressButton } from "./_components/course-progress-button";
+import { Preview } from "@/components/preview";
+import { Separator } from "@/components/ui/separator";
+
 
 const ChapterIdPage = async ({
   params
@@ -80,12 +80,10 @@ const ChapterIdPage = async ({
               {chapter.title}
             </h2>
             {purchase ? (
-              <CourseProgressButton
-                chapterId={params.chapterId}
-                courseId={params.courseId}
-                nextChapterId={nextChapter?.id}
-                isCompleted={!!userProgress?.isCompleted}
-              />
+               <div>
+                  {/* TODO: CourseProgressButton*/ }
+
+               </div>
             ) : (
               <CourseEnrollButton
                 courseId={params.courseId}
@@ -117,6 +115,8 @@ const ChapterIdPage = async ({
               </div>
             </>
           )}
+
+            
         </div>
       </div>
     </div>
