@@ -4,6 +4,8 @@ import { File } from "lucide-react";
 
 import { getChapter } from "@/actions/get-chapter";
 import { Banner } from "@/components/banner";
+import { VideoPlayer } from "./_components/video-player";
+import { CourseProgressButton } from "./_components/course-progress-button";
 // import { Banner } from "@/components/banner";
 // import { Separator } from "@/components/ui/separator";
 // import { Preview } from "@/components/preview";
