@@ -33,7 +33,7 @@ export const NavbarRoutes = () => {
 			) : (
 				<Link href='/teacher/courses'>
 					<Button size='sm' variant='ghost'>
-						teacher mode
+						Teacher mode
 					</Button>
 				</Link>
 			)}
